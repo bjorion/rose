@@ -31,6 +31,9 @@ public abstract class AbstractItem {
         --this.sellIn;
     }
 
+    /**
+     * Update quality and also make sure quality is within limits
+     */
     protected void setQuality(int quality) {
 
         this.quality = checkBounds(quality);

@@ -138,6 +138,19 @@ class GildedRoseTest {
     @Test
     void conjured_qualityDecreasesTwiceAsFast() {
 
+        var items = new Item[]{new Item(CONJURED, 1, 50)};
+        var app = new GildedRose(items);
+        app.updateQuality2();
+        assertItem(app.items[0], CONJURED, 0, 48);
+        app.updateQuality2();
+        assertItem(app.items[0], CONJURED, -1, 44);
+        app.updateQuality2();
+        assertItem(app.items[0], CONJURED, -2, 40);
+    }
+
+    @Test
+    void conjured_qualityDecreasesTwiceAsFastDownToZero() {
+
         var items = new Item[]{new Item(CONJURED, 1, 4)};
         var app = new GildedRose(items);
         app.updateQuality2();
@@ -147,6 +160,7 @@ class GildedRoseTest {
         app.updateQuality2();
         assertItem(app.items[0], CONJURED, -2, 0);
     }
+
 
     private static void assertItem(Item app, String name, int sellIn, int quality) {
 

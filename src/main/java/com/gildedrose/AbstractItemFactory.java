@@ -11,7 +11,7 @@ public class AbstractItemFactory {
             case SulfurasItem.NAME -> new SulfurasItem(item.sellIn, item.quality);
             case BackstageItem.NAME -> new BackstageItem(item.sellIn, item.quality);
             case ConjuredItem.NAME -> new ConjuredItem(item.sellIn, item.quality);
-            default -> new StardardItem(item.name, item.sellIn,  item.quality);
+            default -> new NormalItem(item.name, item.sellIn,  item.quality);
         };
     }
 }

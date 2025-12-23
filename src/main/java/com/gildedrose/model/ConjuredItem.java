@@ -8,12 +8,19 @@ public class ConjuredItem extends AbstractItem {
         super(NAME, sellIn, quality);
     }
 
+    /**
+     * Degrade in Quality twice as fast as normal items
+     */
     @Override
     public void updateQuality() {
 
         decreaseSellIn();
         int quality = getQuality();
-        quality -= 2;
+        if (getSellIn() >= 0) {
+            quality -= 2;
+        } else {
+            quality -= 4;
+        }
         setQuality(quality);
     }
 }

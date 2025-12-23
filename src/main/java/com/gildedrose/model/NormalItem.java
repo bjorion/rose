@@ -1,8 +1,8 @@
 package com.gildedrose.model;
 
-public class StardardItem extends AbstractItem {
+public class NormalItem extends AbstractItem {
 
-    public StardardItem(String name, int sellIn, int quality) {
+    public NormalItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
@@ -14,7 +14,6 @@ public class StardardItem extends AbstractItem {
 
         decreaseSellIn();
         int quality = getQuality();
-
         if (getSellIn() >= 0) {
             quality -= 1;
         } else {
