@@ -3,7 +3,6 @@ package com.gildedrose;
 import com.gildedrose.model.AbstractItem;
 
 import java.util.Arrays;
-import java.util.List;
 
 class GildedRose {
 
@@ -27,7 +26,7 @@ class GildedRose {
         var items = new Item[newItems.size()];
         for (int i = 0; i < newItems.size(); i++) {
             var newItem = newItems.get(i);
-            items[i] = new Item(newItem.getName(),  newItem.getSellIn(), newItem.getQuality());
+            items[i] = new Item(newItem.getName(), newItem.getSellIn(), newItem.getQuality());
         }
         this.items = items;
     }
